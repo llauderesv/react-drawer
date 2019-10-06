@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { CSSTransition, Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import Portal from './Portal';
 import Drawer from './Drawer';
 import './App.css';
-
-const duration = 300;
 
 function App() {
   const [show, setShow] = useState(false);
@@ -22,6 +20,7 @@ function App() {
           </Drawer>
         </CSSTransition>
       </Portal>
+      <p>Click the button to show Navigation Drawer</p>
       <button onClick={handleSetShow}>Show Drawer</button>
     </div>
   );

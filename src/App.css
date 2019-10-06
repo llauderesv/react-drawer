@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 10px;
 }
 
 .App-logo {
@@ -22,15 +23,6 @@
 }
 
 /* Drawer Animation */
-/* .drawer-enter {
-  opacity: 0;
-}
-
-.drawer-enter-done {
-  display: inline-block;
-  width: 350px;
-} */
-
 .drawer-enter {
   animation: slide-in 300ms forwards;
   -webkit-animation: slide-in 300ms forwards;
@@ -61,24 +53,22 @@
   }
 }
 
+@keyframes slide-out {
+  0% {
+    visibility: visible;
+    transform: translateX(0%);
+    /* transform: translateX(0%); */
+  }
+  100% {
+    transform: translateX(100%);
+    /* transform: translateX(-100%); */
+  }
+}
 /* @-webkit-keyframes slide-in {
   100% {
     -webkit-transform: translateX(0%);
   }
 } */
-
-@keyframes slide-out {
-  0% {
-    /* transform: translateX(0%); */
-    visibility: visible;
-    transform: translateX(0%);
-  }
-  100% {
-    /* transform: translateX(-100%); */
-    transform: translateX(100%);
-  }
-}
-
 /* @-webkit-keyframes slide-out {
   0% {
     -webkit-transform: translateX(0%);
