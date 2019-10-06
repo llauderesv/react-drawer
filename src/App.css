@@ -20,3 +20,70 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* Drawer Animation */
+/* .drawer-enter {
+  opacity: 0;
+}
+
+.drawer-enter-done {
+  display: inline-block;
+  width: 350px;
+} */
+
+.drawer-enter {
+  animation: slide-in 300ms forwards;
+  -webkit-animation: slide-in 300ms forwards;
+  box-shadow: -2px 1px 10px 2px #5c5c5c6b;
+}
+
+.drawer-enter-done {
+  transform: translateX(0%);
+  visibility: visible;
+  box-shadow: -2px 1px 10px 2px #5c5c5c6b;
+}
+
+.drawer-exit {
+  animation: slide-out 300ms forwards;
+  -webkit-animation: slide-out 300ms forwards;
+  box-shadow: -2px 1px 10px 2px #5c5c5c6b;
+}
+
+.drawer-exit-done {
+  box-shadow: none;
+  visibility: hidden;
+}
+
+@keyframes slide-in {
+  100% {
+    visibility: visible;
+    transform: translateX(0%);
+  }
+}
+
+/* @-webkit-keyframes slide-in {
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+} */
+
+@keyframes slide-out {
+  0% {
+    /* transform: translateX(0%); */
+    visibility: visible;
+    transform: translateX(0%);
+  }
+  100% {
+    /* transform: translateX(-100%); */
+    transform: translateX(100%);
+  }
+}
+
+/* @-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+} */

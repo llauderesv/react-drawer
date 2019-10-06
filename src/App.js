@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { CSSTransition, Transition } from 'react-transition-group';
+import Portal from './Portal';
+import Drawer from './Drawer';
 import './App.css';
 
+const duration = 300;
+
 function App() {
+  const [show, setShow] = useState(false);
+
+  function handleSetShow() {
+    setShow(prevState => !prevState);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Portal>
+        <CSSTransition in={show} timeout={500} classNames="drawer">
+          <Drawer>
+            <button onClick={handleSetShow}>Close</button>
+          </Drawer>
+        </CSSTransition>
+      </Portal>
+      <button onClick={handleSetShow}>Show Drawer</button>
     </div>
   );
 }
